@@ -1,0 +1,35 @@
+Views/Students/Index.cshtml
+@model IEnumerable<StudentCRUD.Models.Student>
+
+<h2>Student List</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<table border="1">
+    <tr>
+        <th>Student ID</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Course</th>
+        <th>Action</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.StudentId</td>
+            <td>@item.Name</td>
+            <td>@item.Age</td>
+            <td>@item.Course</td>
+            <td>
+                @Html.ActionLink("Edit", "Edit",
+                    new { id = item.StudentId }) |
+
+                @Html.ActionLink("Delete", "Delete",
+                    new { id = item.StudentId })
+            </td>
+        </tr>
+    }
+</table>
