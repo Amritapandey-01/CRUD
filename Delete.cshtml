@@ -1,0 +1,27 @@
+Views/Students/Delete.cshtml
+@model StudentCRUD.Models.Student
+
+<h2>Delete Student</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+
+<p>
+    <b>Name:</b> @Model.Name
+</p>
+
+<p>
+    <b>Age:</b> @Model.Age
+</p>
+
+<p>
+    <b>Course:</b> @Model.Course
+</p>
+
+@using (Html.BeginForm())
+{
+    <input type="submit" value="Delete" />
+}
+
+<br />
+
+@Html.ActionLink("Back to List", "Index")
