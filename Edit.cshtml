@@ -1,0 +1,30 @@
+Views/Students/Edit.cshtml
+@model StudentCRUD.Models.Student
+
+<h2>Edit Student</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(x => x.StudentId)
+
+    <p>
+        Name:
+        @Html.TextBoxFor(x => x.Name)
+    </p>
+
+    <p>
+        Age:
+        @Html.TextBoxFor(x => x.Age)
+    </p>
+
+    <p>
+        Course:
+        @Html.TextBoxFor(x => x.Course)
+    </p>
+
+    <input type="submit" value="Save" />
+}
+
+<br />
+
+@Html.ActionLink("Back to List", "Index")
